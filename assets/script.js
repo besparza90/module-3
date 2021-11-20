@@ -19,9 +19,20 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword () { 
-  window.prompt("How many characters does the password need? Select between 8-128.");
-  if (password < 8 || password > 128) {
+ var passwordLength = window.prompt("How many characters does the password need? Select between 8-128.");
+  if (passwordLength < 8 || passwordLength > 128) {
     window.alert ("Please enter a valid number");
     return generatePassword ();
+  }
+  else {
+  var acceptLower = confirm("Will the password have lowercase letters?");
+  var acceptUpper = confirm("Will the password have uppercase letters?");
+  var acceptNumber = confirm("Will the password have numbers?");
+  var acceptSpecial = confirm("Will the password have special characters?");
+  
+  if (!acceptLower && !acceptUpper && !acceptNumber && !acceptSpecial) {
+    alert("Your password must contain at least one lowercase, uppercase, numeric, or special character.");
+    return;
+  }
   }
 }
