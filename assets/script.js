@@ -41,13 +41,13 @@ function generatePassword() {
       alert("Your password must contain at least one lowercase, uppercase, numeric, or special character.");
       return;
     }
-    else {
+      
+    }
       for(var i=password.length; i<passwordLength;i++){
         var random=array[Math.floor(Math.random()*array.length)]
         password+=random[Math.floor(Math.random()*random.length)]
       }
       return password;
     }
-  }
+  
     
-}
